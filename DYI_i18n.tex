@@ -1,0 +1,87 @@
+% Internationalization macros
+
+\newcommand{\Week}{Week}
+\newcommand{\HowGo}{How did it go?}
+\newcommand{\Notes}{Notes}
+\newcommand{\WeekGoals}{Week Goals}
+\newcommand{\Exercise}{Exercise}
+
+% Weekdays
+\newcommand{\Monday}{Monday}
+\newcommand{\Tuesday}{Tuesday}
+\newcommand{\Wednesday}{Wednesday}
+\newcommand{\Thursday}{Thursday}
+\newcommand{\Friday}{Friday}
+\newcommand{\Saturday}{Saturday}
+\newcommand{\Sunday}{Sunday}
+
+% Weekdays in order based on cfg.week_starts_on_Monday
+\newcommand{\DayA}{Monday}
+\newcommand{\DayB}{Tuesday}
+\newcommand{\DayC}{Wednesday}
+\newcommand{\DayD}{Thursday}
+\newcommand{\DayE}{Friday}
+\newcommand{\DayF}{Saturday}
+\newcommand{\DayG}{Sunday}
+
+% Weekdays: abbreviated 2/3 letters
+\newcommand{\Mon}{Mon}
+\newcommand{\Tue}{Tue}
+\newcommand{\Wed}{Wed}
+\newcommand{\Thu}{Thu}
+\newcommand{\Fri}{Fri}
+\newcommand{\Sat}{Sat}
+\newcommand{\Sun}{Sun}
+
+% Weekdays: abbreviated 1 letter
+\newcommand{\MonA}{M}
+\newcommand{\TueA}{T}
+\newcommand{\WedA}{W}
+\newcommand{\ThuA}{T}
+\newcommand{\FriA}{F}
+\newcommand{\SatA}{S}
+\newcommand{\SunA}{S}
+
+% Months: abbreviated 3 letters
+\newcommand{\Jan}{Jan}
+\newcommand{\Feb}{Feb}
+\newcommand{\Mar}{Mar}
+\newcommand{\Apr}{Apr}
+\newcommand{\May}{May}
+\newcommand{\Jun}{Jun}
+\newcommand{\Jul}{Jul}
+\newcommand{\Aug}{Aug}
+\newcommand{\Sep}{Sep}
+\newcommand{\Oct}{Oct}
+\newcommand{\Nov}{Nov}
+\newcommand{\Dec}{Dec}
+
+% Months
+\newcommand{\January}{January}
+\newcommand{\February}{February}
+\newcommand{\March}{March}
+\newcommand{\April}{April}
+\newcommand{\MayL}{May}
+\newcommand{\June}{June}
+\newcommand{\July}{July}
+\newcommand{\August}{August}
+\newcommand{\September}{September}
+\newcommand{\October}{October}
+\newcommand{\November}{November}
+\newcommand{\December}{December}
+
+% Weekdays (abbreviated) table row (no // ending)
+% - generates the weekdays header for monthly tables
+%	#1 = macro to apply to name, default nothing
+\newcommand{\WkdayTblRow}[1]{%
+	#1{\Mon} & #1{\Tue} & #1{\Wed} & #1{\Thu} & #1{\Fri} & #1{\Sat} & #1{\Sun}}
+% - as above but condensed to just one letter
+\newcommand{\WkdayTblRowA}[1]{%
+	#1{\MonA} & #1{\TueA} & #1{\WedA} & #1{\ThuA} & #1{\FriA} & #1{\SatA} & #1{\SunA}}
+
+% Column types for monthly calendars.  These are generated so we can support both weeks
+% starting on Monday and on Sunday.
+\newcolumntype{A}{>{\hfill\normalfont\footnotesize}p{\WkdayColWidthMonthTblYC}<{\hspace*{0.5em}}@{\extracolsep\fill}}
+\newcolumntype{C}{>{\hfill\normalfont\footnotesize\color{WeekendDay}}p{\WkdayColWidthMonthTblYC}<{\hspace*{0.5em}}@{\extracolsep\fill}}
+\newcolumntype{E}{>{\hfill\bfseries\tiny}p{\WkdayColWidthMinicalMP}@{\extracolsep\fill}}
+\newcolumntype{G}{>{\hfill\bfseries\tiny\vstrut{0pt}\color{WeekendDay}}p{\WkdayColWidthMinicalMP}@{\extracolsep\fill}}
