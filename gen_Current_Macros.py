@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 import locale
 import sys
@@ -441,10 +441,10 @@ def write_out_WP_macros(year, file):
         other_y = weeks[w][0].year
 
         # Month macros for the mini cals
-        prev_month_table = '\MonthTbl'
-        curr_month_table = '\MonthTbl' + month_abbr_C[curr_m]
+        prev_month_table = '\\MonthTbl'
+        curr_month_table = '\\MonthTbl' + month_abbr_C[curr_m]
         curr_month_name  = calendar.month_name[curr_m]
-        next_month_table = '\MonthTbl'
+        next_month_table = '\\MonthTbl'
         if (curr_m == 1) and (curr_y == year):      # first month correction: current month is Jan, prev is Dec last year
             prev_month_table += 'DecPrev'
             prev_month_name = calendar.month_name[12]
@@ -460,11 +460,11 @@ def write_out_WP_macros(year, file):
             next_month_name = calendar.month_name[curr_m + 1]
 
         if (curr_m == 1) and (curr_y == year + 1):  # last week correction: current month is Dec, prev is Nov, next is Jan next year
-            prev_month_table = '\MonthTbl' + month_abbr_C[11]
+            prev_month_table = '\\MonthTbl' + month_abbr_C[11]
             prev_month_name = calendar.month_name[11]
             curr_month_table = '\MonthTbl' + month_abbr_C[12]
             curr_month_name  = calendar.month_name[12]
-            next_month_table = '\MonthTbl' + 'JanNext'
+            next_month_table = '\\MonthTbl' + 'JanNext'
             next_month_name = calendar.month_name[1]
 
         left_pg_macro  = '\LeftPageWP{' + str(w) + '}'

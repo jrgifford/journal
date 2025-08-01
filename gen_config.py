@@ -1,10 +1,10 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 import locale
 import gen_events as events
 
 # Year to generate for
-year = 2022
+year = 2025
 
 # True if the week starts on Monday (European convention), False if it starts on Sunday.
 week_starts_on_Monday = True
@@ -12,7 +12,7 @@ week_starts_on_Monday = True
 # Locale -- uncomment one only, use utf-8 encoding ONLY
 #
 #locale.setlocale(locale.LC_ALL, 'en_AU.utf-8')      # Australia
-locale.setlocale(locale.LC_ALL, 'en_GB.utf-8')      # Great Britain
+locale.setlocale(locale.LC_ALL, 'C.UTF-8')      # Basic UTF-8 locale
 #locale.setlocale(locale.LC_ALL, 'fr_FR.utf-8')      # France
 #locale.setlocale(locale.LC_ALL, 'de_DE.utf-8')      # Deuchland
 #locale.setlocale(locale.LC_ALL, 'es_ES.utf-8')      # Espaniol
