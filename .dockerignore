@@ -1,0 +1,85 @@
+# Git and version control
+.git/
+.gitignore
+.gitattributes
+
+# Build outputs and temporary files
+*.pdf
+*.aux
+*.log
+*.out
+*.toc
+*.nav
+*.snm
+*.vrb
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.bbl
+*.blg
+*.idx
+*.ind
+*.ilg
+*.lof
+*.lot
+
+# Generated LaTeX files (will be regenerated)
+DYI_i18n.tex
+DYI_Month_Tables.tex
+DYI_Monthly_Planner_Tables.tex
+DYI_Weekly_Planner_Tables.tex
+52wks.tex
+daily.tex
+
+# Documentation and specs
+README.md
+CLAUDE.md
+docs/
+specs/
+.specify/
+
+# Development and testing
+tests/
+.pytest_cache/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+.env
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Docker files (not needed in build context)
+Dockerfile*
+.dockerignore
+docker-compose*.yml
+
+# CI/CD and automation
+.github/
+.gitlab-ci.yml
+.travis.yml
+.circleci/
+
+# Backup and temporary files
+*.bak
+*.backup
+*.tmp
+*.temp
+*~
+
+# Output directory
+output/
+
+# Scripts that are copied separately
+scripts/

@@ -2,7 +2,8 @@ MAIN_FILE = DYI_Main
 
 PDFLATEX = pdflatex
 
-MACRO_GENERATOR = ./gen_Current_Macros.py
+PY = python3
+MACRO_GENERATOR = gen_Current_Macros.py
 MACRO_INPUTES = gen_config.py           \
                 gen_events.py
 
@@ -35,12 +36,16 @@ DEFAULT: $(FILES_TEX) $(FILES_TEX_GEN) $(GNUPLOT_TEX) $(GNUPLOT_OUTPUT)
 	$(PDFLATEX) $(MAIN_FILE)
 
 $(FILES_TEX_GEN): $(MACRO_GENERATOR) $(MACRO_INPUTES)
-	$(MACRO_GENERATOR)
+	$(PY) $(MACRO_GENERATOR)
 
 $(GNUPLOT_OUTPUT): $(GNUPLOT_INPUT)
 
 %.tex: %.gnuplot
 	$(GNUPLOT) $(@:.tex=.gnuplot)
+
+# Ensure EPS to PDF conversion artifacts exist for inclusion
+%-eps-converted-to.pdf: %.eps
+	gs -dBATCH -dNOPAUSE -sDEVICE=pdfwrite -sOutputFile=$@ $<
 
 clean:
 	rm -f $(FILES_TEX:.tex=.dvi)
@@ -62,4 +67,3 @@ dist: clean
 realdist: realclean
 	cd .. ; \
 	tar -czvf DIY_Organizer-realdist_`date +%F`.tar.gz DIY_Organizer
-
